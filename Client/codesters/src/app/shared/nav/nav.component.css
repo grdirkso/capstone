@@ -1,0 +1,25 @@
+p-panel {
+    display: flex;
+    flex-direction: row;
+    height: 100%; 
+}
+
+:host::ng-deep .p-panel .p-panel-header {
+    display: none;
+}
+
+:host::ng-deep .p-panel .p-panel-content {
+    height: 593px;
+    background-color: #004161;
+    color: white;
+    padding:0;
+}
+
+div {
+    padding: 0.5rem;
+    
+}
+
+div:hover {
+    background-color: rgba(103, 128, 159, 0.2);
+}

@@ -77,15 +77,18 @@ function isValidGroup(team)
        return 1;
     if (team.OrganizationName == undefined || team.OrganizationName.trim() == "")
        return 2;   
-    if (team.SponsorName == undefined || team.SponsorName.trim() == "")
+    if (team.TeacherName == undefined || team.TeacherName.trim() == "")
        return 3;  
-    if (team.SponsorPhone == undefined || team.SponsorPhone.trim() == "")
+    if (team.TeacherPhone == undefined || team.TeacherPhone.trim() == "")
        return 4; 
-    if (team.SponsorEmail == undefined || team.SponsorEmail.trim() == "")
+    if (team.TeacherEmail == undefined || team.TeacherEmail.trim() == "")
        return 5;        
     if (team.MaxGroupSize == undefined || isNaN(team.MaxGroupSize))
        return 6; 
-
+    if (team.AgeGroup == undefined || team.AgeGroup.length == 0)
+        return 7;
+    if (team.Status == undefined || team.Status.trim() == "")   
+        return 8; 
     return -1;
 }
 
@@ -97,7 +100,8 @@ function isValidMember(member)
        return 2;     
     if (member.MemberPhone == undefined || member.MemberPhone.trim() == "")
        return 3; 
-
+    if (member.MemberGrade == undefined || member.MemberGrade.trim() == "")
+        return 4;
     return -1;
 }
 
@@ -231,10 +235,12 @@ app.post("/api/groups", urlencodedParser, function (req, res) {
         GroupId: getNextId("group"),  // assign id to group
 		GroupName: req.body.GroupName,
 		OrganizationName: req.body.OrganizationName,
-		SponsorName: req.body.SponsorName,
-		SponsorPhone: req.body.SponsorPhone,
-		SponsorEmail: req.body.SponsorEmail,
+		TeacherName: req.body.TeacherName,
+		TeacherPhone: req.body.TeacherPhone,
+		TeacherEmail: req.body.TeacherEmail,
+        AgeGroup: req.body.AgeGroup,
 		MaxGroupSize: Number(req.body.MaxGroupSize),
+        Status: req.body.Status,
         Members : []
     };
 
@@ -272,9 +278,11 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
         GroupId: req.body.GroupId,
 		GroupName: req.body.GroupName,
 		OrganizationName: req.body.OrganizationName,
-		SponsorName: req.body.SponsorName,
-		SponsorPhone: req.body.SponsorPhone,
-		SponsorEmail: req.body.SponsorEmail,
+		TeacherName: req.body.TeacherName,
+		TeacherPhone: req.body.TeacherPhone,
+		TeacherEmail: req.body.TeacherEmail,
+        AgeGroup: req.body.AgeGroup,
+        Status: req.body.Status,
 		MaxGroupSize: Number(req.body.MaxGroupSize),
     };
 
@@ -355,7 +363,8 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
         MemberId: getNextId("member"),   // assign new id
         MemberEmail: req.body.MemberEmail,
 		MemberName: req.body.MemberName,
-        MemberPhone: req.body.MemberPhone
+        MemberPhone: req.body.MemberPhone,
+        MemberGrade: req.body.MemberGrade
     };
 
     console.log("Performing member validation...");
@@ -381,6 +390,10 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
     // add the member
     match.Members.push(member);
 
+    if( Number(match.MaxGroupSize === match.Members.length)) {
+        req.status(409).send("This class is at max capacity. Cannot add another student");
+        return;
+    }
     fs.writeFileSync(__dirname + "/data/groups.json", JSON.stringify(data));
    
     console.log("New member added!");
@@ -398,7 +411,8 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
         MemberId: req.body.MemberId,
         MemberEmail: req.body.MemberEmail,
 		MemberName: req.body.MemberName,
-        MemberPhone: req.body.MemberPhone
+        MemberPhone: req.body.MemberPhone,
+        MemberGrade: req.body.MemberGrade
     };
 
     console.log("Performing member validation...");
