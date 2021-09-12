@@ -1,4 +1,4 @@
-html,
+/* html,
 body,
 app-root {
   height: 100%;
@@ -9,4 +9,27 @@ app-nav {
   display: flex;
   flex: 1 0;
   min-height: 0;
+}
+
+app-home, app-class, app-registration, app-class-submission {
+  display: flex;
+  flex: 1 0;
+  min-height: 0;
+  overflow: auto;
+}
+
+.container {
+  padding: 0.3em;
+  display: flex;
+} */
+
+/* app-home, app-class, app-registration, app-class-submission {
+ flex-grow: 2;
+} */
+
+html,
+body,
+app-root {
+  height: 100%;
+  margin: 0;
 }

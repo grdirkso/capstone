@@ -1,0 +1,36 @@
+ 
+/* :host::ng-deep .p-panel .p-panel-header {
+    display: none;
+} */
+
+div p-panel {
+    flex: 1;
+}
+
+
+h1 {
+    text-align: center;
+    text-shadow: 2px 2px gray;
+    font-size: 90px;
+    margin-bottom: 0;
+}
+
+div {
+    display:flex;
+    gap: 10px;
+    padding: 10px;
+    flex-direction:row;
+} 
+
+p {
+    /* display: inline-block; */
+    text-align: center;
+    font-size: 18px;
+    padding: 10px;
+
+}
+
+:host::ng-deep .p-panel .p-panel-header {
+    background-color: #004161;
+    color: white;
+}

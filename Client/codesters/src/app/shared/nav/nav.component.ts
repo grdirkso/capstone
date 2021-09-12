@@ -15,10 +15,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
 
     this.items = [
-      'Home',
-      'Classes',
-      'Registration',
-      'Class Idea Submission'
+      {label: 'Home', link: 'home'},
+      {label: 'Classes', link: 'classes'},
+      {label: 'Registration', link: 'registration'},
+      {label: 'Class Idea Submission', link: 'class-submission'},
     ];
   }
 

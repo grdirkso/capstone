@@ -12,13 +12,20 @@ import {SidebarModule} from 'primeng/sidebar';
 import {PanelModule} from 'primeng/panel';
 import {ButtonModule} from 'primeng/button';
 import { HomeComponent } from './home/home.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { ClassesComponent } from './classes/classes.component';
+import { ClassSubmissionComponent } from './class-submission/class-submission.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    RegistrationComponent,
+    ClassesComponent,
+    ClassSubmissionComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +34,8 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     SidebarModule,
     PanelModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

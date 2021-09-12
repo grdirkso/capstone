@@ -5,8 +5,9 @@ header {
     height: 4em;
 }
 h1 {
-   text-align: center;
+   text-align: left;
    margin-top: 0;
+   padding-left: .5rem;
    color: rgba(0,0,0,.61);
 }
 

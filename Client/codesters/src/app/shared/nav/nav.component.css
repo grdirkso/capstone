@@ -1,6 +1,6 @@
 p-panel {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     height: 100%; 
 }
 
@@ -22,4 +22,9 @@ div {
 
 div:hover {
     background-color: rgba(103, 128, 159, 0.2);
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
