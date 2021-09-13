@@ -12,7 +12,7 @@ export class ClassTypesService {
 
   constructor(private http: HttpClient) { }
 
-  getClassTypes(): Observable<ClassTypes> {
-    return this.http.get<ClassTypes>(this.classTypeUrl);
+  getClassTypes(): Observable<ClassTypes[]> {
+    return this.http.get<ClassTypes[]>(this.classTypeUrl);
   }
 }

@@ -1,0 +1,43 @@
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 0;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+.test {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+}
+
+:host::ng-deep .p-panel .p-panel-header .p-panel-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.filter-bar {
+    width: fit-content;
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 3px;
+    float: right;
+}
+
+
+:host::ng-deep .p-dropdown {
+    border: none;
+    border-radius: 0;
+    border-right: 1px solid #ced4da;
+}
+
+.message {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  padding-top: 50px;
+}

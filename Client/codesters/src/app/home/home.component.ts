@@ -9,7 +9,7 @@ import { ClassTypesService } from '../services/class-types.service';
 })
 export class HomeComponent implements OnInit {
 
-  classTypes: ClassTypes;
+  classTypes: ClassTypes[];
   constructor(
     private classTypesService: ClassTypesService
   ) { }

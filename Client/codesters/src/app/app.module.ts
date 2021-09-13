@@ -16,6 +16,12 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ClassesComponent } from './classes/classes.component';
 import { ClassSubmissionComponent } from './class-submission/class-submission.component';
 import { HttpClientModule } from '@angular/common/http';
+import {CardModule} from 'primeng/card';
+import {DividerModule} from 'primeng/divider';
+import {DropdownModule} from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,13 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarModule,
     PanelModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule,
+    DividerModule,
+    DropdownModule,
+    FormsModule,
+    MessageModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

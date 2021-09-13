@@ -1,1 +1,75 @@
 
+  <h1>
+    Our Classes
+   </h1>
+  <div class="filter-bar">
+    <p-dropdown [options]="statusFilter" [(ngModel)]="selectedFilter" (onChange)="filterByStatus()" placeholder="Status"></p-dropdown>
+    <p-dropdown [options]="gradeFilter" [(ngModel)]="selectedGrade" (onChange)="filterByGrade()" placeholder="Grade"></p-dropdown>
+    <p-dropdown [options]="openSeatsFilter" [(ngModel)]="selectedAvalability" (onChange)="filterbyAvailability()" placeholder="Seat Availability"></p-dropdown>
+  </div>
+  <div *ngIf="blockClasses.length == 0 && textClasses.length  == 0 && advancedClasses.length == 0" class="message">
+    <p-message severity="info" text="There are no classes that match your filter selection."></p-message>
+  </div>
+  <br>
+  <div *ngIf="blockClasses.length > 0">
+    <h2>Block-Based Coding</h2>
+    <div class="test">
+      <div *ngFor="let class of blockClasses" class="child"> 
+        <p-panel [header]="class.GroupName">
+            <b>Grades:</b> {{ class.AgeGroup}}
+            <br>
+            <b>Teacher:</b> {{ class.TeacherName }}
+            <br>
+            <b>Phone:</b> {{ class.TeacherPhone }}
+            <br>
+            <b>Email:</b> {{ class.TeacherEmail }}
+            <br>
+            <b>Available Seats:</b> {{ class.MaxGroupSize - class.Members.length}}
+            <br>
+            <b>Status:</b> {{ class.Status}}
+        </p-panel>
+      </div> 
+    </div>
+  </div>
+  <div *ngIf="textClasses.length > 0">
+    <h2>Text-Based Coding</h2>
+  <div class="test">
+      <div *ngFor="let class of textClasses" class="child"> 
+        <p-panel [header]="class.GroupName">
+          <b>Grades:</b> {{ class.AgeGroup}}
+          <br>
+          <b>Teacher:</b> {{ class.TeacherName }}
+          <br>
+          <b>Phone:</b> {{ class.TeacherPhone }}
+          <br>
+          <b>Email:</b> {{ class.TeacherEmail }}
+          <br>
+          <b>Available Seats:</b> {{ class.MaxGroupSize - class.Members.length}}
+          <br>
+          <b>Status:</b> {{ class.Status}}
+        </p-panel>
+      </div> 
+    </div>
+  </div>
+  <div *ngIf="advancedClasses.length > 0">
+    <h2>Advanced Coding and Creation</h2>
+    <div class="test">
+      <div *ngFor="let class of advancedClasses" class="child"> 
+        <p-panel [header]="class.GroupName">
+          <b>Grades:</b> {{ class.AgeGroup}}
+          <br>
+          <b>Teacher:</b> {{ class.TeacherName }}
+          <br>
+          <b>Phone:</b> {{ class.TeacherPhone }}
+          <br>
+          <b>Email:</b> {{ class.TeacherEmail }}
+          <br>
+          <b>Available Seats:</b> {{ class.MaxGroupSize - class.Members.length}}
+          <br>
+          <b>Status:</b> {{ class.Status}}
+        </p-panel>
+      </div> 
+    </div>
+  </div>
+  
+  
