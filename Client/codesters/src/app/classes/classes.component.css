@@ -9,7 +9,7 @@ h2 {
     margin-left: 10px;
 }
 
-.test {
+.grid {
     display:grid;
     grid-template-columns: 50% 50%;
     gap: 10px;

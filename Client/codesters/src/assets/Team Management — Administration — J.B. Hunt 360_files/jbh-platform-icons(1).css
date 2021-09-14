@@ -1,0 +1,162 @@
+@font-face {
+	font-family: "jbh-platform-icons";
+	src: url('jbh-platform-icons.eot');
+	src: url('jbh-platform-icons.eot?#iefix') format('eot'),
+		url('jbh-platform-icons.woff2') format('woff2'),
+		url('jbh-platform-icons.woff') format('woff'),
+		url('jbh-platform-icons.ttf') format('truetype'),
+		url('jbh-platform-icons.svg#jbh-platform-icons') format('svg');
+}
+
+.jbh-platform-icon:before {
+	font-family: "jbh-platform-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	/* speak: none; only necessary if not using the private unicode range (firstGlyph option) */
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+.icon-Platform_Accounts:before {
+	content: "\E001";
+}
+
+.icon-Platform_Admin:before {
+	content: "\E002";
+}
+
+.icon-Platform_Advisor:before {
+	content: "\E003";
+}
+
+.icon-Platform_Assets:before {
+	content: "\E004";
+}
+
+.icon-Platform_Billing:before {
+	content: "\E005";
+}
+
+.icon-Platform_Carriers:before {
+	content: "\E006";
+}
+
+.icon-Platform_Loads:before {
+	content: "\E007";
+}
+
+.icon-Platform_Locations:before {
+	content: "\E008";
+}
+
+.icon-Platform_Orders:before {
+	content: "\E009";
+}
+
+.icon-Platform_Payments:before {
+	content: "\E00A";
+}
+
+.icon-Platform_Preferences:before {
+	content: "\E00B";
+}
+
+.icon-Platform_Reports:before {
+	content: "\E00C";
+}
+
+.icon-Platform_Routes:before {
+	content: "\E00D";
+}
+
+.icon-Platform_Tracking:before {
+	content: "\E00E";
+}
+
+.icon-Platform_Compliance:before {
+	content: "\E00F";
+}
+
+.icon-Platform_Safety:before {
+	content: "\E010";
+}
+
+.icon-Platform_Training:before {
+	content: "\E011";
+}
+
+.icon-Platform_Inventory:before {
+	content: "\E012";
+}
+
+.icon-Platform_Scheduling:before {
+	content: "\E013";
+}
+
+.icon-Platform_Impersonate:before {
+	content: "\E014";
+}
+
+.icon-Platform_Yard:before {
+	content: "\E015";
+}
+
+.icon-Platform_Compensation:before {
+	content: "\E016";
+}
+
+.icon-Platform_Users:before {
+	content: "\E017";
+}
+
+.icon-Platform_Pricing:before {
+	content: "\E018";
+}
+
+.icon-Platform_Security:before {
+	content: "\E019";
+}
+
+.icon-Platform_Finance:before {
+	content: "\E01A";
+}
+
+.icon-Platform_BluePoint:before {
+	content: "\E01B";
+}
+
+.icon-Platform_Developer:before {
+	content: "\E01C";
+}
+
+.icon-Platform_Clipboard_Alert:before {
+	content: "\E01D";
+}
+
+.icon-Platform_Scroll_Check:before {
+	content: "\E01E";
+}
+
+.icon-Platform_Trailer_Back:before {
+	content: "\E01F";
+}
+
+.icon-Platform_Truck_Message:before {
+	content: "\E020";
+}
+
+.icon-Platform_Match:before {
+	content: "\E021";
+}
+
+.icon-Platform_Digital_Freight_Matching:before {
+	content: "\E022";
+}
+
+.icon-Platform_Networks:before {
+	content: "\E023";
+}

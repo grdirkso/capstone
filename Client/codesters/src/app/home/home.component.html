@@ -6,8 +6,8 @@
     Please visit our classes page to learn more about each class. 
     If you feel that we are missing something please submit a class idea for review!
   </p>
-  <div>
-    <p-panel *ngFor='let classType of classTypes' [header]="classType.OrganizationName">
+  <div class="grid">
+    <p-panel *ngFor='let classType of classTypes' [header]="classType.OrganizationName" class="col">
       {{classType.Description}}
     </p-panel> 
   </div>

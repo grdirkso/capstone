@@ -1,18 +1,15 @@
-/* .router-container {
-    padding: 0 0.7em;
-    transition: margin 400ms ease;
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
-    flex: 5;
-  }
-*/
+
  app-nav {
   flex: 1;
-  min-width: 173px;
-  max-width: 173px;
+  min-width: 250px;
+  max-width: 250px;
 }  
 
 .flex-container {
     display: flex;  
-}  
+} 
+
+app-header {
+  position:fixed;
+  z-index: -1;
+}

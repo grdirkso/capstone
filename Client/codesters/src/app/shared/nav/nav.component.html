@@ -1,5 +1,7 @@
 <p-panel>
-    <div *ngFor=" let item of items">
+    <h3>Menu</h3>
+    <br>
+    <div *ngFor=" let item of items" class="menu-items">
        <a [routerLink]="item.link" >{{item.label}}</a>
     </div>
 </p-panel>

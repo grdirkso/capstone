@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Classes } from '../models/classes.model';
+import { Members } from '../models/members.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,4 +18,12 @@ export class ClassesService {
   getClasses(): Observable<Classes[]> {
     return this.http.get<Classes[]>(this.classUrl);
   }
+
+  getClassById(classId: string): Observable<Classes> {
+    return this.http.get<Classes>(`${this.classUrl}/${classId}`)
+  }
+  addMember(classId: string, member: Members): Observable<Members> {
+    return this.http.post<Members>(`${this.classUrl}/${classId}/members`, member);
+  }
+
 }

@@ -15,9 +15,9 @@ export class ClassesComponent implements OnInit {
   classes: Classes[];
   classesMaster: Classes[];
   classTypes: ClassTypes[];
-  blockClasses: Classes[];
-  textClasses: Classes[];
-  advancedClasses: Classes[];
+  blockClasses: Classes[] = [];
+  textClasses: Classes[] = [];
+  advancedClasses: Classes[]= [];
   statusFilter;
   selectedFilter;
   gradeFilter;

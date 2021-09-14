@@ -1,5 +1,5 @@
 export class Members {
-    MemberId: number;
+    MemberId?: number;
     MemberEmail: string;
     MemberName: string;
     MemberPhone: string;

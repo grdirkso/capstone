@@ -7,7 +7,7 @@
     "TeacherPhone": "555-000-0000",
     "TeacherEmail": "nat214@gmail.com",
     "AgeGroup": ["1"],
-    "MaxGroupSize": 5,
+    "MaxGroupSize": 6,
     "Status": "active",
     "Members": [
       {
@@ -54,7 +54,7 @@
     "TeacherName": "Brittany Ray",
     "TeacherPhone": "555-000-0004",
     "TeacherEmail": "brit805@aol.com",
-    "AgeGroup": ["1","2"],
+    "AgeGroup": ["1", "2"],
     "MaxGroupSize": 5,
     "Status": "active",
     "Members": [
@@ -81,17 +81,24 @@
     "TeacherName": "Zachary Westly",
     "TeacherPhone": "555-000-0012",
     "TeacherEmail": "zwest90@gmail.com",
-    "AgeGroup":[ "2","3","4"],
+    "AgeGroup": ["2", "3", "4"],
     "MaxGroupSize": 5,
     "Status": "active",
     "Members": [
-        {
-            "MemberId": 7,
-            "MemberEmail": "kdunlap@gmail.com",
-            "MemberName": "Kim Dunlap",
-            "MemberPhone": "555-000-0007",
-            "MemberGrade": "4"
-          }
+      {
+        "MemberId": 7,
+        "MemberEmail": "kdunlap@gmail.com",
+        "MemberName": "Kim Dunlap",
+        "MemberPhone": "555-000-0007",
+        "MemberGrade": "4"
+      },
+      {
+        "MemberId": 8,
+        "MemberEmail": "mom@gmail.com",
+        "MemberName": "Gillian Dirkson",
+        "MemberPhone": "1231231234",
+        "MemberGrade": "4"
+      }
     ]
   },
   {
@@ -101,24 +108,24 @@
     "TeacherName": "Sandy Mayer",
     "TeacherPhone": "555-000-1234",
     "TeacherEmail": "smayer@gmail.com",
-    "AgeGroup": ["3","4","5"],
+    "AgeGroup": ["3", "4", "5"],
     "MaxGroupSize": 5,
-    "Status": "active",
+    "Status": "inactive",
     "Members": [
-        {
-            "MemberId": 8,
-            "MemberEmail": "tmullaney@gmail.com",
-            "MemberName": "Tom Mullaney",
-            "MemberPhone": "555-000-0010",
-            "MemberGrade": "4"
-          },
-          {
-            "MemberId": 9,
-            "MemberEmail": "shadner@gmail.com",
-            "MemberName": "Sean Hadner",
-            "MemberPhone": "555-000-0011",
-            "MemberGrade": "5"
-          }
+      {
+        "MemberId": 8,
+        "MemberEmail": "tmullaney@gmail.com",
+        "MemberName": "Tom Mullaney",
+        "MemberPhone": "555-000-0010",
+        "MemberGrade": "4"
+      },
+      {
+        "MemberId": 9,
+        "MemberEmail": "shadner@gmail.com",
+        "MemberName": "Sean Hadner",
+        "MemberPhone": "555-000-0011",
+        "MemberGrade": "5"
+      }
     ]
   },
   {
@@ -128,17 +135,17 @@
     "TeacherName": "Beth Lexington",
     "TeacherPhone": "555-123-0012",
     "TeacherEmail": "blexington@gmail.com",
-    "AgeGroup": ["6","7","8"],
+    "AgeGroup": ["6", "7", "8"],
     "MaxGroupSize": 5,
     "Status": "active",
     "Members": [
-        {
-            "MemberId": 5,
-            "MemberEmail": "cgill@gmail.com",
-            "MemberName": "Charlotte Gill",
-            "MemberPhone": "555-000-0012",
-            "MemberGrade": "8"
-          }
+      {
+        "MemberId": 5,
+        "MemberEmail": "cgill@gmail.com",
+        "MemberName": "Charlotte Gill",
+        "MemberPhone": "555-000-0012",
+        "MemberGrade": "8"
+      }
     ]
   }
 ]

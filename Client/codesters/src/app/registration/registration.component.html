@@ -1,1 +1,45 @@
-<p>registration works!</p>
+<p-toast></p-toast>
+<p-panel header="Class Registration">
+    <form [formGroup]="regForm" (ngSubmit)="submit()">
+        <div class="grid">
+            <div class="col">
+                <input id="float-input" type="text" pInputText  placeholder="Child's Name" formControlName="name">
+            </div> 
+        </div>
+        <div class="grid">
+            <div class="col">
+                <input id="float-input" type="text" placeholder="Parent's Email" formControlName="email" pInputText> 
+            </div>
+            <div class="col">
+                <input id="float-input" type="text" placeholder="Parent's Phone Number" formControlName="phone" pInputText> 
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col">
+                <p-dropdown formControlName="grade" placeholder="Select Child's Grade" (onChange)="populateClassList()" [options]="grades" [(ngModel)]="selectedGrade"></p-dropdown>
+            </div>
+            <div class="col">
+                <p-dropdown formControlName="class" placeholder="Select a Class" [options]="availableClasses" [(ngModel)]="selectedClass"></p-dropdown>
+            </div>
+        </div>
+    </form>
+    <p-footer>
+        <p-button label="Register" (click)="submit()"></p-button>
+    </p-footer>   
+</p-panel>
+
+<p-dialog [(visible)]="display" resizable="false">
+    <h1>You are Registered!</h1>
+    <p>Other students in you class:</p>
+    <div class="grid">
+    <div *ngFor="let member of members" class="col">
+            <div><b>Name: </b>{{member.MemberName}}</div>
+            <div><b>Grade: </b>{{member.MemberGrade}}</div>
+            <div><b>Phone Number: </b>{{member.MemberPhone}}</div>
+            <div><b>Email: </b>{{member.MemberEmail}}</div>
+
+        </div>
+    </div>
+    
+    
+</p-dialog>

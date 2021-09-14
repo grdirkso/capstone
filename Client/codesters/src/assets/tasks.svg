@@ -1,0 +1,10 @@
+<svg id="tasks" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <path id="Path_15071" data-name="Path 15071" d="M0,0H48V48H0Z" fill="rgba(255,255,255,0)"/>
+  <g id="Clipboard_Check" transform="translate(15 14)">
+    <path id="Clipboard_Check-2" data-name="Clipboard_Check" d="M16.375,1.25H13.25V.625A.625.625,0,0,0,12.625,0H6.375A.625.625,0,0,0,5.75.625V1.25H2.625A.625.625,0,0,0,2,1.875v17.5A.625.625,0,0,0,2.625,20h13.75A.625.625,0,0,0,17,19.375V1.875A.625.625,0,0,0,16.375,1.25ZM7,1.25h5V2.5H7Zm8.75,17.5H3.25V2.5h2.5v.625a.625.625,0,0,0,.625.625h6.25a.625.625,0,0,0,.625-.625V2.5h2.5ZM8.275,15.282l-3.592-3.59a.626.626,0,0,1,.885-.885l2.658,2.66,5.185-5.76a.625.625,0,1,1,.93.835Z" fill="#007dba"/>
+  </g>
+  <g id="push" transform="translate(-1230.824 -12.758)">
+    <circle id="Ellipse_237" data-name="Ellipse 237" cx="8" cy="8" r="8" transform="translate(1253.824 21.758)" fill="#cc2d24"/>
+    <text id="_4" data-name="4" transform="translate(1258.824 24.758)" fill="#fff" font-size="12" font-family="ProximaNova-Regular, Proxima Nova" letter-spacing="0.02em"><tspan x="-0.348" y="9">4</tspan></text>
+  </g>
+</svg>
