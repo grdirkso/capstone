@@ -1,9 +1,4 @@
-/* header {
-    box-shadow: 0 4px 2px -2px gray;
-    background-color: white;
-    width: 100%;
-    height: 4em;
-} */
+
 h1 {
    color: rgba(0, 0, 0, 0.61);
    font-size: 1.25em;
@@ -13,12 +8,6 @@ h1 {
    max-width: 100%;
    text-align: center;
    font-family: ProximaNova,Helvetica,Arial,Sans-Serif;
-}
-.icon {
-    /* background-image : ("assets/waffle-menu.png"); */
-    height: 6em;
-    width: 6em;
-    display: block;
 }
 
 header {
@@ -36,4 +25,27 @@ header {
     z-index: 9001;
     letter-spacing: 0;
     box-shadow: 0 .0625em .1875em rgba(0, 0, 0, 0.12), 0 .0625em .125em rgba(0, 0, 0, 0.24);
+    justify-content: flex-end;
 }
+
+img:hover {
+    cursor: pointer;
+}
+
+.left-container { 
+    flex:1;
+}
+ .logo {
+     width: 15.3em;
+ }
+
+ span {
+    flex:2.2;
+    line-height: 1.5em;
+    font-size: 1.25em;
+    text-align: left;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.61);
+    margin-top: 0.48em;
+ }
