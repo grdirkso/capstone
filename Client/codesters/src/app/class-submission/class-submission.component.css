@@ -1,3 +1,35 @@
 :host::ng-deep .p-dropdown, input, :host::ng-deep .p-multiselect {
     width:100%;
 }
+
+:host::ng-deep .p-panel .p-panel-header .p-panel-title {
+    font-size: 20px;
+}
+
+input {
+    width:100%;
+}
+
+:host::ng-deep .p-dropdown {
+    width:100%;
+}
+
+:host::ng-deep .p-button {
+    background: rgba(0, 125, 186, 1);
+    min-width: 120px;
+    border-radius: 6px;
+}
+
+:host::ng-deep .p-button:hover {
+    background: rgba(0, 65, 97, 1);
+}
+
+:host::ng-deep .p-panel {
+    box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    border-radius: 6px;
+}
+
+:host::ng-deep .p-panel .p-panel-footer {
+    display: flex;
+    justify-content: flex-end;
+}
