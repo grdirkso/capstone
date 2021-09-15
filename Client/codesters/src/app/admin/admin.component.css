@@ -1,0 +1,46 @@
+
+h1 {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 0;
+}
+
+h2 {
+    margin-left: 10px;
+}
+
+
+:host::ng-deep .p-panel .p-panel-header .p-panel-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+:host::ng-deep .p-button {
+    background: rgba(0, 125, 186, 1);
+    min-width: 120px;
+    border-radius: 6px;
+}
+
+:host::ng-deep .p-button:hover {
+    background: rgba(0, 65, 97, 1);
+}
+
+:host::ng-deep .p-panel .p-panel-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+:host::ng-deep .p-dropdown, input, :host::ng-deep .p-multiselect {
+    width:100%;
+}
+
+:host::ng-deep .p-dialog,  :host::ng-deep .p-dialog-content{
+    height: 350px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}

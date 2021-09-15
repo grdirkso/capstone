@@ -309,9 +309,12 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
     // update the group
     match.GroupName = req.body.GroupName;
     match.OrganizationName = req.body.OrganizationName;
-    match.SponsorName = req.body.SponsorName;
-    match.SponsorPhone = req.body.SponsorPhone;
-    match.SponsorEmail = req.body.SponsorEmail;
+    match.TeacherName = req.body.TeacherName;
+    match.TeacherPhone = req.body.TeacherPhone;
+    match.TeacherEmail = req.body.TeacherEmail;
+    match.AgeGroup = req.body.AgeGroup;
+    match.Status = req.body.Status;
+    match.MaxGroupSize = req.body.MaxGroupSize;
 
     // make sure new values for MaxGroupSize doesn't invalidate grooup
     if ( Number(req.body.MaxGroupSize) < match.Members.length )

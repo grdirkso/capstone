@@ -1,0 +1,79 @@
+<p-toast></p-toast>
+<div class="grid">
+    <div *ngFor="let class of classes" class="col-6"> 
+      <p-panel [header]="class.GroupName">
+          <b>Grades:</b> {{ class.AgeGroup}}
+          <br>
+          <b>Teacher:</b> {{ class.TeacherName }}
+          <br>
+          <b>Phone:</b> {{ class.TeacherPhone }}
+          <br>
+          <b>Email:</b> {{ class.TeacherEmail }}
+          <br>
+          <b>Available Seats:</b> {{ class.MaxGroupSize - class.Members.length}}
+          <br>
+          <b>Status:</b> {{ class.Status}}
+          <p-footer>
+            <p-button label="Edit" (click)="editClass(class)"></p-button>
+        </p-footer>   
+      </p-panel>
+    </div> 
+  </div>
+
+
+  <p-dialog [(visible)]="display" header="Edit Class" [resizable]="false">
+    <form [formGroup]="editForm">
+        <div class="grid">
+            <div class="col-6">
+                <label for="float-input">Class Name:</label>
+                <input id="float-input" type="text" pInputText   formControlName="name">
+                <small id="username2-help" *ngIf="editForm.get('name').errors && editForm.get('name').touched" class="p-error">Class Name is required</small>
+            </div> 
+            <div class="col-6">
+                <label for="float-input">Class Type:</label>
+                <p-dropdown formControlName="classType"  [options]="classTypes" [(ngModel)]="selectedClassType"></p-dropdown>
+                <small id="username2-help" *ngIf="editForm.get('classType').errors && editForm.get('classType').touched" class="p-error">Class Type is required</small>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-4">
+                <label for="float-input">Teacher's Name:</label>
+                <input id="float-input" type="text" pInputText   formControlName="teacherName">
+                <small id="username2-help" *ngIf="editForm.get('teacherName').errors && editForm.get('teacherName').touched" class="p-error">Teacher Name is required</small>
+            </div> 
+            <div class="col-4">
+                <label for="float-input">Teacher's Phone Number:</label>
+                <input id="float-input" type="text" pInputText   formControlName="teacherPhone">
+                <small id="username2-help" *ngIf="editForm.get('teacherPhone').errors && editForm.get('teacherPhone').touched" class="p-error">Teacher Phone is required</small>
+            </div> 
+            <div class="col-4">
+                <label for="float-input">Teacher's Email:</label>
+                <input id="float-input" type="text" pInputText   formControlName="teacherEmail">
+                <small id="username2-help" *ngIf="editForm.get('teacherEmail').errors" class="p-error">Valid Teacher Email is required</small>
+            </div> 
+        </div>
+        <div class="grid">
+            <div class="col-4">
+                <label for="float-input">Select Grade(s):</label>
+                <p-multiSelect [showHeader]="false" scrollHeight="100px" formControlName="grades" [options]="gradeSelection" optionValue="code" [(ngModel)]="selectedGrades" optionLabel="name"></p-multiSelect>
+                <small id="username2-help" *ngIf="editForm.get('grades').errors && editForm.get('grades').touched" class="p-error">At least one Grade is required</small>
+            </div>
+            <div class="col-4">
+                <label for="float-input">Select Class Status:</label>
+                <p-dropdown formControlName="status"  [options]="statusSelection"></p-dropdown>
+                <small id="username2-help" *ngIf="editForm.get('status').errors && editForm.get('status').touched" class="p-error">Class Status is required</small>
+            </div>
+            <div class="col-4">
+                <label for="float-input">Number of Seats:</label>
+                <input id="float-input" type="text" pInputText  formControlName="groupSize">
+                <small id="username2-help" *ngIf="editForm.get('groupSize').errors && editForm.get('groupSize').touched" class="p-error">Numer of Seats is required</small>
+            </div> 
+        </div>
+    </form>
+    <div class="button-container">
+       <p-button label="Delete" (click)="deleteClass()"></p-button>
+       <p-button label="Update" (click)="editSubmission()"></p-button> 
+    </div>
+    
+  </p-dialog>
+  

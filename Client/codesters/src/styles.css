@@ -11,7 +11,7 @@ body {
   overflow:hidden;
 }
 
-app-home, app-classes, app-registration, app-class-submission {
+app-home, app-classes, app-registration, app-class-submission, app-admin {
   width: 100%;
   max-height: 555px;
   overflow-y: scroll;

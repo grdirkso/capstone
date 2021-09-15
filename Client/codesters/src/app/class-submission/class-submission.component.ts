@@ -76,7 +76,24 @@ export class ClassSubmissionComponent implements OnInit {
   submit() {
     if(this.submissionForm.valid) {
       this.class = this.mapFormToClass();
-      this.classesService.addClass(this.class).subscribe();
+      this.classesService.addClass(this.class).subscribe(
+        submission => {
+          {
+            this.messageService.add({
+              severity: 'success',
+              summary: 'Class Submitted',
+              detail: `Class has been submitted for review`
+            });
+          }
+        },
+        error =>  {
+          this.messageService.add({
+            severity: 'error',
+            summary: 'OOPS',
+            detail: `Something went wrong!`
+          });
+        }
+      );
       this.routeHome();
     } else {
       this.messageService.add({

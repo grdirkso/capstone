@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Classes } from '../models/classes.model';
 import { Members } from '../models/members.model';
 
@@ -10,7 +10,7 @@ import { Members } from '../models/members.model';
 export class ClassesService {
 
   classUrl = 'http://127.0.0.1:8082/api/groups';
-
+  
   constructor(
     private http: HttpClient
   ) { }
@@ -29,5 +29,13 @@ export class ClassesService {
 
   addClass(c: Classes): Observable<Classes> {
     return this.http.post<Classes>(this.classUrl, c);
+  }
+
+  editClass(c: Classes): Observable<Classes> {
+    return this.http.put<Classes>(this.classUrl, c);
+  }
+
+  deleteClass(id: number): Observable<Classes> {
+    return this.http.delete<Classes>(`${this.classUrl}/${id}`);
   }
 }

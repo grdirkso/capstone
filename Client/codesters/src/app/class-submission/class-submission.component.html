@@ -1,17 +1,20 @@
 <p-toast></p-toast>
-<p-panel header="Class Registration">
+<p-panel header="Class Idea Submission">
     <form [formGroup]="submissionForm" (ngSubmit)="submit()">
         <div class="grid">
             <div class="col">
                 <input id="float-input" type="text" pInputText  placeholder="Class Name" formControlName="name">
+                <small id="username2-help" *ngIf="submissionForm.get('name').errors && submissionForm.get('name').touched" class="p-error">Class Name is required</small>
             </div> 
         </div>
         <div class="grid">
             <div class="col-6">
                 <p-dropdown formControlName="classType" placeholder="Select Class Type" [options]="classTypes" [(ngModel)]="selectedClassType"></p-dropdown>
+                <small id="username2-help" *ngIf="submissionForm.get('classType').errors && submissionForm.get('classType').touched" class="p-error">Class Type is required</small>
             </div>
             <div class="col-6">
-                <p-multiSelect formControlName="grades" [options]="gradeSelection" optionValue="code" [(ngModel)]="selectedGrades" optionLabel="name" placeholder="Select Grade(s)"></p-multiSelect>
+                <p-multiSelect [showHeader]="false" formControlName="grades" [options]="gradeSelection" optionValue="code" [(ngModel)]="selectedGrades" optionLabel="name" placeholder="Select Grade(s)"></p-multiSelect>
+                <small id="username2-help" *ngIf="submissionForm.get('grades').errors && submissionForm.get('grades').touched" class="p-error">At least one grade required</small>
             </div>
         </div>
     </form>

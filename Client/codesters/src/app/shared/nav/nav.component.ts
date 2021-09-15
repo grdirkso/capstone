@@ -19,6 +19,7 @@ export class NavComponent implements OnInit {
       {label: 'Classes', link: 'classes'},
       {label: 'Registration', link: 'registration'},
       {label: 'Class Idea Submission', link: 'class-submission'},
+      {label: 'Admin Portal', link: 'admin'}
     ];
   }
 
