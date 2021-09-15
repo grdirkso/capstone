@@ -1,1 +1,21 @@
-<p>class-submission works!</p>
+<p-toast></p-toast>
+<p-panel header="Class Registration">
+    <form [formGroup]="submissionForm" (ngSubmit)="submit()">
+        <div class="grid">
+            <div class="col">
+                <input id="float-input" type="text" pInputText  placeholder="Class Name" formControlName="name">
+            </div> 
+        </div>
+        <div class="grid">
+            <div class="col-6">
+                <p-dropdown formControlName="classType" placeholder="Select Class Type" [options]="classTypes" [(ngModel)]="selectedClassType"></p-dropdown>
+            </div>
+            <div class="col-6">
+                <p-multiSelect formControlName="grades" [options]="gradeSelection" optionValue="code" [(ngModel)]="selectedGrades" optionLabel="name" placeholder="Select Grade(s)"></p-multiSelect>
+            </div>
+        </div>
+    </form>
+    <p-footer>
+        <p-button label="Submit" (click)="submit()"></p-button>
+    </p-footer>   
+</p-panel>

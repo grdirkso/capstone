@@ -24,12 +24,12 @@
         </div>
     </form>
     <p-footer>
-        <p-button label="Register" (click)="submit()"></p-button>
+        <p-button label="{{inEdit ? 'Edit' : 'Register'}}" (click)="submit()"></p-button>
     </p-footer>   
 </p-panel>
 
-<p-dialog [(visible)]="display" resizable="false">
-    <h1>You are Registered!</h1>
+<p-dialog [(visible)]="display" resizable="false" [closable]="false" [closeOnEscape]="false">
+    <h1>{{this.regForm.get('name').value}} is registered for {{this.selectedClass}}</h1>
     <p>Other students in you class:</p>
     <div class="grid">
     <div *ngFor="let member of members" class="col">
@@ -37,9 +37,9 @@
             <div><b>Grade: </b>{{member.MemberGrade}}</div>
             <div><b>Phone Number: </b>{{member.MemberPhone}}</div>
             <div><b>Email: </b>{{member.MemberEmail}}</div>
-
         </div>
     </div>
-    
-    
+    <p-footer>
+        <p-button icon="pi pi-check" (click)="routeHome()" label="Continue"></p-button>
+    </p-footer>
 </p-dialog>

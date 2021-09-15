@@ -25,6 +25,7 @@ import {InputTextModule} from 'primeng/inputtext';
 import {ToastModule} from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import {DialogModule} from 'primeng/dialog';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import {DialogModule} from 'primeng/dialog';
     InputTextModule,
     ReactiveFormsModule,
     ToastModule,
-    DialogModule
+    DialogModule,
+    MultiSelectModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -35,7 +35,7 @@ export class ClassesComponent implements OnInit {
       {label: 'All Statuses', value: 'all'},
       {label: 'Inactive', value:'inactive'},
       {label: 'Active', value:'active'},
-      {label: 'In Review', value:'inreview'}
+      {label: 'In Review', value:'in review'}
     ];
 
     this.gradeFilter = [
@@ -74,8 +74,7 @@ export class ClassesComponent implements OnInit {
   getClassTypes() {
     this.classTypesService.getClassTypes().subscribe(classType => {
       this.classTypes = classType,
-      error => console.log(error),
-      console.log(this.classTypes);
+      error => console.log(error)
     });
   }
 

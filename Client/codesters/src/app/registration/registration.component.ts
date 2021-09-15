@@ -4,6 +4,8 @@ import { Classes } from '../models/classes.model';
 import { Members } from '../models/members.model';
 import { ClassesService } from '../services/classes.service';
 import {MessageService} from 'primeng/api';
+import { ActivatedRoute, Router } from '@angular/router';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-registration',
@@ -22,6 +24,7 @@ export class RegistrationComponent implements OnInit {
     availableClasses = [];
     selectedClass = {label: 'No available classes', value: '0'};
     display: boolean = false;
+    inEdit: boolean = false;
 
     regForm: FormGroup = this.fb.group({
       name: ['', Validators.required],
@@ -34,7 +37,9 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private classesService: ClassesService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { 
 
     this.grades = [
@@ -95,14 +100,13 @@ export class RegistrationComponent implements OnInit {
                     .filter(c => c.AgeGroup.includes(this.regForm.get('grade').value))
                     .filter(c => c.Status === "active")
                     .filter(c => c.Members.length < c.MaxGroupSize);
-    this.classList.forEach(element => {
-      this.availableClasses.push({label: element.GroupName, value: element.GroupId})
-    });
+    this.availableClasses = this.classList.map(element => element.GroupName);
+    console.log(this.classList);
     if(this.availableClasses.length === 0) {
       this.availableClasses = [
         {label: 'No available classes', value: '0'}
       ];
-    }
+    } 
   }
 
   allMembers() {
@@ -110,5 +114,9 @@ export class RegistrationComponent implements OnInit {
      this.members = c.Members,
       error => console.log(error);
     });
+  }
+
+  routeHome(){
+    this.router.navigate(['/home'], { relativeTo: this.route });
   }
 }

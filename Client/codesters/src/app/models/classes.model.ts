@@ -1,7 +1,7 @@
 import { Members } from "./members.model";
 
 export class Classes {
-    GroupId: number;
+    GroupId?: number;
     GroupName: string
     OrganizationName: string;
     TeacherName: string;
@@ -10,5 +10,5 @@ export class Classes {
     AgeGroup: string[]
     MaxGroupSize: number;
     Status: string;
-    Members: Members[];
+    Members?: Members[];
 }

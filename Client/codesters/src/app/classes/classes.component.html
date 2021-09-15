@@ -14,7 +14,7 @@
   <div *ngIf="blockClasses.length > 0">
     <h2>Block-Based Coding</h2>
     <div class="grid">
-      <div *ngFor="let class of blockClasses" class="child"> 
+      <div *ngFor="let class of blockClasses" class="col-6"> 
         <p-panel [header]="class.GroupName">
             <b>Grades:</b> {{ class.AgeGroup}}
             <br>
@@ -33,8 +33,8 @@
   </div>
   <div *ngIf="textClasses.length > 0">
     <h2>Text-Based Coding</h2>
-  <div class="test">
-      <div *ngFor="let class of textClasses" class="child"> 
+  <div class="grid">
+      <div *ngFor="let class of textClasses" class="col-6"> 
         <p-panel [header]="class.GroupName">
           <b>Grades:</b> {{ class.AgeGroup}}
           <br>
@@ -53,8 +53,8 @@
   </div>
   <div *ngIf="advancedClasses.length > 0">
     <h2>Advanced Coding and Creation</h2>
-    <div class="test">
-      <div *ngFor="let class of advancedClasses" class="child"> 
+    <div class="grid">
+      <div *ngFor="let class of advancedClasses" class="col-6"> 
         <p-panel [header]="class.GroupName">
           <b>Grades:</b> {{ class.AgeGroup}}
           <br>

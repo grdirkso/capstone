@@ -22,8 +22,12 @@ export class ClassesService {
   getClassById(classId: string): Observable<Classes> {
     return this.http.get<Classes>(`${this.classUrl}/${classId}`)
   }
+
   addMember(classId: string, member: Members): Observable<Members> {
     return this.http.post<Members>(`${this.classUrl}/${classId}/members`, member);
   }
 
+  addClass(c: Classes): Observable<Classes> {
+    return this.http.post<Classes>(this.classUrl, c);
+  }
 }
