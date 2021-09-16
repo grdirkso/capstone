@@ -73,18 +73,19 @@ Class Idea Submission:
        ![image](https://user-images.githubusercontent.com/36120935/133668643-02701e5d-8920-47bf-a035-a23f2bd3819f.png)
 
      - information dynamically pulled in for drop downs
-        ![image](https://user-images.githubusercontent.com/36120935/133668664-f4a1ff29-ef0d-4503-a29c-b9aa2bcef568.png)
+   ![image](https://user-images.githubusercontent.com/36120935/133669693-1bf5931f-c72e-4ba6-a56b-2b05bb6e91c8.png)
+
 
      - toast messages to alert user when they try to submit an invalid form and when they have successfully submited form
-       ![image](https://user-images.githubusercontent.com/36120935/133668697-8468f7fc-0d2a-4661-8976-914b50461900.png)
-       ![image](https://user-images.githubusercontent.com/36120935/133668722-fffa9ddb-8437-439f-9c44-b3fbeec24d03.png)
+   ![image](https://user-images.githubusercontent.com/36120935/133668697-8468f7fc-0d2a-4661-8976-914b50461900.png)
+    ![image](https://user-images.githubusercontent.com/36120935/133668722-fffa9ddb-8437-439f-9c44-b3fbeec24d03.png)
      - messages below fields if touched and not filled out    
 Admin Portal: 
     - see all classes and their information
       ![image](https://user-images.githubusercontent.com/36120935/133668797-00dea95d-ee3e-4d8f-ae21-cc143aab67c2.png)
 
     - edit class via form 
-      ![image](https://user-images.githubusercontent.com/36120935/133668841-e2d0f4ec-269b-4b3c-822c-86150030350c.png)
+   ![image](https://user-images.githubusercontent.com/36120935/133668841-e2d0f4ec-269b-4b3c-822c-86150030350c.png)
     - delete class
     - all information and form fields are dynamically populated
     - classes automatically update    
