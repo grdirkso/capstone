@@ -46,6 +46,8 @@ Header:
     - css flexbox used
 Home:   
     - Description and class types
+    ![image](https://user-images.githubusercontent.com/36120935/133664557-742e16b1-617b-4605-a1ba-8a035b5cda4e.png)
+
 Classes: 
     - all classes and the class information
     - ability to filter by status, available seats and grade
