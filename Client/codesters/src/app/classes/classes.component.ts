@@ -3,7 +3,7 @@ import { ClassTypes } from '../models/class-types.model';
 import { Classes } from '../models/classes.model';
 import { ClassTypesService } from '../services/class-types.service';
 import { ClassesService } from '../services/classes.service';
-import {FilterService} from 'primeng/api';
+import {FilterService, MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-classes',
@@ -24,6 +24,7 @@ export class ClassesComponent implements OnInit {
   selectedGrade;
   openSeatsFilter;
   selectedAvalability;
+  items: MenuItem[];
 
   constructor(
     private classesService: ClassesService,
@@ -59,6 +60,10 @@ export class ClassesComponent implements OnInit {
   ngOnInit(): void {
     this.getClasses();
     this.getClassTypes();
+    this.items = [
+      {label: 'Home', routerLink: '/home'},
+      {label:'Classes'}
+    ]
   }
 
   getClasses() {
@@ -66,7 +71,6 @@ export class ClassesComponent implements OnInit {
       this.classes = classes,
       this.classesMaster = classes,
       error => console.log(error),
-      console.log(this.classes),
       this.splitClassesByType();
     });
   }
@@ -97,7 +101,6 @@ export class ClassesComponent implements OnInit {
       this.classes = this.classesMaster;
       this.classes = this.classes.filter(element => element.Status === this.selectedFilter);
     } else if (this.selectedFilter === 'all') {
-      console.log(this.classesMaster);
       this.classes = this.classesMaster;  
     }
     this.splitClassesByType(); 

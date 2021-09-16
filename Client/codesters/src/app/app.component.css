@@ -13,3 +13,8 @@ app-header {
   position:fixed;
   z-index: 20;
 }
+
+::ng-deep .p-breadcrumb {
+  border: none;
+}
+

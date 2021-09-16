@@ -1,0 +1,54 @@
+<p-breadcrumb [model]="items"></p-breadcrumb>
+<p-toast></p-toast>
+<div class="grid">
+    <div *ngFor="let student of students" class="col-6"> 
+      <p-panel [header]="student.MemberName">
+          <b>Name:</b> {{ student.MemberName}}
+          <br>
+          <b>Phone:</b> {{ student.MemberPhone}}
+          <br>
+          <b>Email:</b> {{ student.MemberEmail }}
+          <br>
+          <b>Grade:</b> {{ student.MemberGrade }}
+          <p-footer>
+            <p-button label="Edit" (click)="editStudent(student)"></p-button>
+        </p-footer>   
+      </p-panel>
+    </div> 
+  </div>
+
+
+  <p-dialog [(visible)]="display" header="Edit Student" [resizable]="false">
+    <form [formGroup]="editForm">
+        <div class="grid">
+            <div class="col-6">
+                <label for="float-input">Student Name:</label>
+                <input id="float-input" type="text" pInputText   formControlName="name">
+                <small id="username2-help" *ngIf="editForm.get('name').errors && editForm.get('name').touched" class="p-error">Student Name is required</small>
+            </div> 
+            <div class="col-6">
+                <label for="float-input">Student's Grade:</label>
+                <p-dropdown formControlName="grade"  [options]="gradeSelection"></p-dropdown>
+                <small id="username2-help" *ngIf="editForm.get('grade').errors && editForm.get('grade').touched" class="p-error">Student Grade is required</small>
+            </div> 
+        </div>
+        <div class="grid">
+            <div class="col-6">
+                <label for="float-input">Parent's Phone Number:</label>
+                <input id="float-input" type="text" pInputText   formControlName="phone">
+                <small id="username2-help" *ngIf="editForm.get('phone').errors && editForm.get('phone').touched" class="p-error">Parent Phone is required</small>
+            </div> 
+            <div class="col-6">
+                <label for="float-input">Parent's Email:</label>
+                <input id="float-input" type="text" pInputText   formControlName="email">
+                <small id="username2-help" *ngIf="editForm.get('email').errors" class="p-error">Valid Parent Email is required</small>
+            </div> 
+        </div>
+    </form>
+    <div class="button-container">
+       <p-button label="Delete" (click)="deleteStudent()"></p-button>
+       <p-button label="Update" (click)="editSubmission()"></p-button> 
+    </div>
+    
+  </p-dialog>
+  

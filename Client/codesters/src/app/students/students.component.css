@@ -20,7 +20,6 @@ h2 {
     background: rgba(0, 125, 186, 1);
     min-width: 120px;
     border-radius: 6px;
-    margin-left: 10px;
 }
 
 :host::ng-deep .p-button:hover {
@@ -30,7 +29,6 @@ h2 {
 :host::ng-deep .p-panel .p-panel-footer {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
 }
 
 :host::ng-deep .p-dropdown, input, :host::ng-deep .p-multiselect {
@@ -46,4 +44,3 @@ h2 {
     justify-content: flex-end;
     gap: 16px;
 }
-

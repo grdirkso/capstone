@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { Classes } from '../models/classes.model';
 import { ClassesService } from '../services/classes.service';
 
@@ -20,6 +20,7 @@ export class AdminComponent implements OnInit {
   classTypes;
   selectedClassType;
   statusSelection;
+  items: MenuItem[];
   
 
   editForm: FormGroup = this.fb.group({
@@ -64,6 +65,10 @@ export class AdminComponent implements OnInit {
       {label: 'Active', value:'active'},
       {label: 'In Review', value:'in review'}
     ]
+    this.items = [
+      {label: 'Home', routerLink: '/home'},
+      {label:'Admin Portal',}
+    ]
   }
 
 
@@ -100,7 +105,7 @@ export class AdminComponent implements OnInit {
       teacherPhone: selectedClass.TeacherPhone,
       status: selectedClass.Status,
       groupSize: selectedClass.MaxGroupSize
-    })
+    });
   }
 
   editSubmission() {
@@ -119,7 +124,6 @@ export class AdminComponent implements OnInit {
       });
     } else {
       updatedClass = this.mapFormToClass();
-      console.log(updatedClass);
       this.classesService.editClass(updatedClass).subscribe(
         selectedClass => {
           this.messageService.add({
@@ -160,5 +164,9 @@ export class AdminComponent implements OnInit {
         });
       }
     )
+  }
+
+  viewStudents(selectedClass : Classes) {
+    this.router.navigate(['admin/students/', selectedClass.GroupId]);
   }
 }

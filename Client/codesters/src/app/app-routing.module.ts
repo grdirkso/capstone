@@ -5,6 +5,7 @@ import { ClassSubmissionComponent } from './class-submission/class-submission.co
 import { ClassesComponent } from './classes/classes.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { StudentsComponent } from './students/students.component';
 
 const fallbackRoute: Route = {
   path:'**', component: HomeComponent
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: 'registration', component: RegistrationComponent},
     {path: 'class-submission', component: ClassSubmissionComponent},
     {path: 'admin', component: AdminComponent},
+    {path: 'admin/students/:id', component: StudentsComponent},
     fallbackRoute
 
   ]

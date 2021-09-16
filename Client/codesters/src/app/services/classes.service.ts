@@ -27,6 +27,14 @@ export class ClassesService {
     return this.http.post<Members>(`${this.classUrl}/${classId}/members`, member);
   }
 
+  editMember(classId: string, member: Members): Observable<Members> {
+    return this.http.put<Members>(`${this.classUrl}/${classId}/members`, member);
+  }
+
+  deleteMember(classId: string, memberId: number): Observable<Members> {
+    return this.http.delete<Members>(`${this.classUrl}/${classId}/members/${memberId}`);
+  }
+
   addClass(c: Classes): Observable<Classes> {
     return this.http.post<Classes>(this.classUrl, c);
   }

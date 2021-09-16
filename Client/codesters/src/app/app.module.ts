@@ -28,6 +28,8 @@ import {DialogModule} from 'primeng/dialog';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { AdminComponent } from './admin/admin.component';
 import {MenubarModule} from 'primeng/menubar';
+import { StudentsComponent } from './students/students.component';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import {MenubarModule} from 'primeng/menubar';
     RegistrationComponent,
     ClassesComponent,
     ClassSubmissionComponent,
-    AdminComponent
+    AdminComponent,
+    StudentsComponent
     ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import {MenubarModule} from 'primeng/menubar';
     ToastModule,
     DialogModule,
     MultiSelectModule,
-    MenubarModule
+    MenubarModule,
+    BreadcrumbModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
+<p-breadcrumb [model]="items"></p-breadcrumb>
 <p-toast></p-toast>
 <div class="grid">
     <div *ngFor="let class of classes" class="col-6"> 
@@ -14,6 +15,7 @@
           <br>
           <b>Status:</b> {{ class.Status}}
           <p-footer>
+            <p-button label="View Students" (click)="viewStudents(class)"></p-button>  
             <p-button label="Edit" (click)="editClass(class)"></p-button>
         </p-footer>   
       </p-panel>

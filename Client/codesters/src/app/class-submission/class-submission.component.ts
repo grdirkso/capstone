@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
 import { element } from 'protractor';
 import { ClassTypes } from '../models/class-types.model';
 import { Classes } from '../models/classes.model';
@@ -21,6 +21,7 @@ export class ClassSubmissionComponent implements OnInit {
   classTypes;
   selectedClassType;
   class: Classes;
+  items: MenuItem[];
 
   submissionForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
@@ -51,6 +52,10 @@ export class ClassSubmissionComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClassTypes();
+    this.items = [
+      {label: 'Home', routerLink: '/home'},
+      {label:'Class Idea Submission'}
+    ]
   }
 
   mapFormToClass(): Classes{
@@ -94,7 +99,6 @@ export class ClassSubmissionComponent implements OnInit {
           });
         }
       );
-      this.routeHome();
     } else {
       this.messageService.add({
         severity: 'error',
@@ -103,9 +107,5 @@ export class ClassSubmissionComponent implements OnInit {
       });
     }
     
-  }
-
-  routeHome(){
-    this.router.navigate(['/home'], { relativeTo: this.route });
   }
 }

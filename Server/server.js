@@ -451,6 +451,7 @@ app.put("/api/groups", urlencodedParser, function (req, res) {
     match.MemberEmail = req.body.MemberEmail;
     match.MemberName = req.body.MemberName;    
     match.MemberPhone = req.body.MemberPhone;
+    match.MemberGrade = req.body.MemberGrade;
 
     fs.writeFileSync(__dirname + "/data/groups.json", JSON.stringify(data));
    
