@@ -53,8 +53,7 @@ Classes:
     ![image](https://user-images.githubusercontent.com/36120935/133664726-ea4c89c8-fcb2-4ecf-a8e2-ad38d83020dc.png)
 
     - ability to filter by status, available seats and grade
-    ![image](https://user-images.githubusercontent.com/36120935/133669302-beb825e4-7f5b-4b4c-9ab8-5dd4941d9e99.png)
-
+![image](https://user-images.githubusercontent.com/36120935/133669530-0bf877ac-3d82-4000-887d-d43d04b6328d.png)
     - message if there are no classes that match filter selection
     ![image](https://user-images.githubusercontent.com/36120935/133664737-b3cb5e16-a055-4f9e-ab82-46d9fa7d476f.png)
 
