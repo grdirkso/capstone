@@ -129,7 +129,7 @@ export class StudentsComponent implements OnInit {
         this.getMembers(this.classId);
         this.messageService.add({
           severity: 'success',
-          summary: 'Class Deleted',
+          summary: 'Student Deleted',
           detail: `The ${this.selectedStudent.MemberName} has been deleted`
         });
       },

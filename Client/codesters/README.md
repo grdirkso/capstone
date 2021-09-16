@@ -1,27 +1,80 @@
 # Codesters
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+This project is a coding class registration for children. 
+
+Groups: Classes
+Organizations: Types of classes
+Member: Students
+
+There is also an admin portal for editing class and student details, as well as the ability to delete a class or student.
+
+Parent's can also submit a class idea via the 'Class Idea Submission' page.
+
+## Technologies Used
+Routing 
+PrimeNg
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+cd into client/codesters and run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Json Server
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+cd into server and run `node server.js` to start the json server. The server should be listening on port 8082, if not set the port by running `node server.js --p 8082`
 
-## Build
+## API Endpoints
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+`/api/groups/:groupid`
+ GET - get specific class
+ DELETE - delete specific class
+`/api/groups/` 
+ GET - get all class
+ POST - add a class
+ PUT - update a class
+`/api/groups/:groupid/members`
+ POST - add a member to specific class
+ PUT - edit a member
+`/api/groups/:groupid/members/:memberid`
+ DELETE - delete a member
+`/api/organizations`
+ GET - get all class types
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Features
+Header: 
+    - looks just like JBH header, however does not have any of the functionality 
+    - css flexbox used
+Home:   
+    - Description and class types
+Classes: 
+    - all classes and the class information
+    - ability to filter by status, available seats and grade
+    - message if there are no classes that match filter selection
+Class Registration:
+    - Form to register for class
+    - information dynamically pulled in for drop downs
+    - class drop down only populated with classes that have available seats, are active and are offered to grade    selected  
+    - toast messages to alert user when they try to submit an invalid form
+    - messages below fields if touched and not filled out
+    - route to classes upon successful registration
+Class Idea Submission:
+     - Form to submit class idea
+     - information dynamically pulled in for drop downs
+     - toast messages to alert user when they try to submit an invalid form and when they have successfully submited form
+     - messages below fields if touched and not filled out    
+Admin Portal: 
+    - see all classes and their information
+    - edit class via form 
+    - delete class
+    - all information and form fields are dynamically populated
+    - classes automatically update    
+    - toast messages to alert user when they try to submit an invalid form and when they have successfully updated/deleted a class
+     - messages below fields if touched and not filled out   
+Students: 
+    - all students in a specific class, select from Admin Portal
+    - edit student via form 
+    - delete student
+    - all information and form fields are dynamically populated
+    - students automatically update    
+    - toast messages to alert user when they try to submit an invalid form and when they have successfully updated/deleted a studnt
+     - messages below fields if touched and not filled out  
