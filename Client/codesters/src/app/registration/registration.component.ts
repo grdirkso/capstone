@@ -24,7 +24,6 @@ export class RegistrationComponent implements OnInit {
     availableClasses = [];
     selectedClass = {label: 'No available classes', value: '0'};
     display: boolean = false;
-    inEdit: boolean = false;
     items: MenuItem[];
 
     regForm: FormGroup = this.fb.group({
@@ -105,7 +104,10 @@ export class RegistrationComponent implements OnInit {
                     .filter(c => c.AgeGroup.includes(this.regForm.get('grade').value))
                     .filter(c => c.Status === "active")
                     .filter(c => c.Members.length < c.MaxGroupSize);
-    this.availableClasses = this.classList.map(element => element.GroupName);
+    this.availableClasses = this.classList.map(c =>({
+      label: c.GroupName,
+      value: c.GroupId
+    }));
     if(this.availableClasses.length === 0) {
       this.availableClasses = [
         {label: 'No available classes', value: '0'}

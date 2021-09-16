@@ -5,32 +5,42 @@
         <div class="grid">
             <div class="col">
                 <input id="float-input" type="text" pInputText  placeholder="Child's Name" formControlName="name">
+                <small id="username2-help" *ngIf="regForm.get('name').errors && regForm.get('name').touched" class="p-error">Child Name is required</small>
+
             </div> 
         </div>
         <div class="grid">
             <div class="col">
                 <input id="float-input" type="text" placeholder="Parent's Email" formControlName="email" pInputText> 
+                <small id="username2-help" *ngIf="regForm.get('email').errors && regForm.get('email').touched" class="p-error">Valid Parent Email is required</small>
+
             </div>
             <div class="col">
                 <input id="float-input" type="text" placeholder="Parent's Phone Number" formControlName="phone" pInputText> 
+                <small id="username2-help" *ngIf="regForm.get('phone').errors && regForm.get('phone').touched" class="p-error">Parent Phone Number is required</small>
+
             </div>
         </div>
         <div class="grid">
             <div class="col">
                 <p-dropdown formControlName="grade" placeholder="Select Child's Grade" (onChange)="populateClassList()" [options]="grades" [(ngModel)]="selectedGrade"></p-dropdown>
+                <small id="username2-help" *ngIf="regForm.get('grade').errors && regForm.get('grade').touched" class="p-error">Stdent Grade is required</small>
+
             </div>
             <div class="col">
                 <p-dropdown formControlName="class" placeholder="Select a Class" [options]="availableClasses" [(ngModel)]="selectedClass"></p-dropdown>
+                <small id="username2-help" *ngIf="regForm.get('class').errors && regForm.get('class').touched" class="p-error">Please Select a Class</small>
+
             </div>
         </div>
     </form>
     <p-footer>
-        <p-button label="{{inEdit ? 'Edit' : 'Register'}}" (click)="submit()"></p-button>
+        <p-button label="Register" (click)="submit()"></p-button>
     </p-footer>   
 </p-panel>
 
 <p-dialog [(visible)]="display" resizable="false" [closable]="false" [closeOnEscape]="false">
-    <h1>{{this.regForm.get('name').value}} is registered for {{this.selectedClass}}</h1>
+    <h1>{{this.regForm.get('name').value}} has been registered</h1>
     <p>Other students in you class:</p>
     <div class="grid">
     <div *ngFor="let member of members" class="col">
