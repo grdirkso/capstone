@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
   getClassTypes() {
     this.classTypesService.getClassTypes().subscribe(classType => {
       this.classTypes = classType,
-      error => console.log(error),
+      error => console.log(error)
     });
   }
 }
