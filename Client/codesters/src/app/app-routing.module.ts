@@ -8,8 +8,8 @@ import { RegistrationComponent } from './registration/registration.component';
 import { StudentsComponent } from './students/students.component';
 
 const fallbackRoute: Route = {
-  path:'**', component: HomeComponent
-}
+  path: '**', component: HomeComponent
+};
 
 const routes: Routes = [
 {

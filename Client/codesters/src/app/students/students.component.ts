@@ -25,7 +25,6 @@ export class StudentsComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     grade: ['', Validators.required]
   });
-  
   constructor(
     private classesService: ClassesService,
     private router: Router,
@@ -41,35 +40,34 @@ export class StudentsComponent implements OnInit {
     });
     this.gradeSelection = [
       {label: '1', value: '1'},
-      {label: '2', value:'2'},
-      {label: '3', value:'3'},
-      {label: '4', value:'4'},
-      {label: '5', value:'5'},
-      {label: '6', value:'6'},
-      {label: '7', value:'7'},
-      {label: '8', value:'8'}
+      {label: '2', value: '2'},
+      {label: '3', value: '3'},
+      {label: '4', value: '4'},
+      {label: '5', value: '5'},
+      {label: '6', value: '6'},
+      {label: '7', value: '7'},
+      {label: '8', value: '8'}
     ];
 
     this.items = [
       {label: 'Home', routerLink: '/home'},
-      {label:'Admin Portal', routerLink: '/admin'},
+      {label: 'Admin Portal', routerLink: '/admin'},
       {label: 'Students'}
-    ]
+    ];
   }
 
   getMembers(id: string) {
     this.classesService.getClassById(id).subscribe(classes => {
-      this.students = classes.Members,
-      error => console.log(error);
-    })
+      this.students = classes.Members;
+    });
   }
 
   editStudent(student: Members) {
     this.selectedStudent = student;
     this.display = true;
     this.editForm.setValue({
-      name:student.MemberName,
-      phone:student.MemberPhone,
+      name: student.MemberName,
+      phone: student.MemberPhone,
       email: student.MemberEmail,
       grade: student.MemberGrade
     });
@@ -82,12 +80,12 @@ export class StudentsComponent implements OnInit {
       MemberPhone: this.editForm.get('phone').value,
       MemberEmail: this.editForm.get('email').value,
       MemberGrade: this.editForm.get('grade').value,
-    }
+    };
   }
 
   editSubmission() {
-    let updatedStudent: Members
-    if(this.editForm.invalid) {
+    let updatedStudent: Members;
+    if (this.editForm.invalid) {
       this.messageService.add({
         severity: 'error',
         summary: 'Invalid Form',
@@ -118,8 +116,8 @@ export class StudentsComponent implements OnInit {
             detail: `Something went wrong!`
           });
         }
-      );   
-    } 
+      );
+    }
   }
 
   deleteStudent() {
@@ -130,7 +128,7 @@ export class StudentsComponent implements OnInit {
         this.messageService.add({
           severity: 'success',
           summary: 'Student Deleted',
-          detail: `The ${this.selectedStudent.MemberName} has been deleted`
+          detail: `${this.selectedStudent.MemberName} has been deleted`
         });
       },
       error => {
@@ -140,6 +138,6 @@ export class StudentsComponent implements OnInit {
           detail: `Something went wrong!`
         });
       }
-    )
+    );
   }
 }

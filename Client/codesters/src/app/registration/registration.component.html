@@ -41,7 +41,7 @@
 
 <p-dialog [(visible)]="display" resizable="false" [closable]="false" [closeOnEscape]="false">
     <h1>{{this.regForm.get('name').value}} has been registered</h1>
-    <p>Other students in you class:</p>
+    <p>Other students in your class:</p>
     <div class="grid">
     <div *ngFor="let member of members" class="col">
             <div><b>Name: </b>{{member.MemberName}}</div>

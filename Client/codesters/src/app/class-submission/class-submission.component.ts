@@ -40,13 +40,13 @@ export class ClassSubmissionComponent implements OnInit {
 
     this.gradeSelection = [
       {name: '1', code: '1'},
-      {name: '2', code:'2'},
-      {name: '3', code:'3'},
-      {name: '4', code:'4'},
-      {name: '5', code:'5'},
-      {name: '6', code:'6'},
-      {name: '7', code:'7'},
-      {name: '8', code:'8'}
+      {name: '2', code: '2'},
+      {name: '3', code: '3'},
+      {name: '4', code: '4'},
+      {name: '5', code: '5'},
+      {name: '6', code: '6'},
+      {name: '7', code: '7'},
+      {name: '8', code: '8'}
     ];
    }
 
@@ -54,8 +54,8 @@ export class ClassSubmissionComponent implements OnInit {
     this.getClassTypes();
     this.items = [
       {label: 'Home', routerLink: '/home'},
-      {label:'Class Idea Submission'}
-    ]
+      {label: 'Class Idea Submission'}
+    ];
   }
 
   mapFormToClass(): Classes{
@@ -68,18 +68,17 @@ export class ClassSubmissionComponent implements OnInit {
       TeacherPhone: 'TBD',
       Status: 'in review',
       MaxGroupSize: 5
-    }
+    };
   }
 
   getClassTypes() {
     this.classTypesService.getClassTypes().subscribe(classType => {
       this.classTypes = classType.map(element => element.OrganizationName);
-      error => console.log(error)
     });
   }
 
   submit() {
-    if(this.submissionForm.valid) {
+    if (this.submissionForm.valid) {
       this.class = this.mapFormToClass();
       this.classesService.addClass(this.class).subscribe(
         submission => {
@@ -90,6 +89,14 @@ export class ClassSubmissionComponent implements OnInit {
               detail: `Class has been submitted for review`
             });
           }
+
+          this.submissionForm.setValue({
+            name: '',
+            classType: '',
+            grades: ''
+          });
+          this.submissionForm.markAsPristine();
+          this.submissionForm.markAsUntouched();
         },
         error =>  {
           this.messageService.add({
@@ -106,6 +113,5 @@ export class ClassSubmissionComponent implements OnInit {
         detail: 'All fields must be filled out'
       });
     }
-    
   }
 }

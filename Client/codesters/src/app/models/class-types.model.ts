@@ -1,6 +1,6 @@
 export class ClassTypes {
     OrganizationName: string;
-    OrganizationId: String;
+    OrganizationId: string;
     Description: string;
 
 }

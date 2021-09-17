@@ -21,7 +21,6 @@ export class AdminComponent implements OnInit {
   selectedClassType;
   statusSelection;
   items: MenuItem[];
-  
 
   editForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
@@ -47,36 +46,35 @@ export class AdminComponent implements OnInit {
     this.getClasses();
     this.gradeSelection = [
       {name: '1', code: '1'},
-      {name: '2', code:'2'},
-      {name: '3', code:'3'},
-      {name: '4', code:'4'},
-      {name: '5', code:'5'},
-      {name: '6', code:'6'},
-      {name: '7', code:'7'},
-      {name: '8', code:'8'}
+      {name: '2', code: '2'},
+      {name: '3', code: '3'},
+      {name: '4', code: '4'},
+      {name: '5', code: '5'},
+      {name: '6', code: '6'},
+      {name: '7', code:  '7'},
+      {name: '8', code: '8'}
     ];
     this.classTypes = [
       {label: 'Block-Based Coding', value: 'Block-Based Coding'},
       {label: 'Text-Based Coding', value: 'Text-Based Coding'},
       {label: 'Advanced Coding and Creation', value: 'Advanced Coding and Creation' }
-    ]
+    ];
     this.statusSelection = [
-      {label: 'Inactive', value:'inactive'},
-      {label: 'Active', value:'active'},
-      {label: 'In Review', value:'in review'}
-    ]
+      {label: 'Inactive', value: 'inactive'},
+      {label: 'Active', value: 'active'},
+      {label: 'In Review', value: 'in review'}
+    ];
     this.items = [
       {label: 'Home', routerLink: '/home'},
-      {label:'Admin Portal',}
-    ]
+      {label: 'Admin Portal'}
+    ];
   }
 
 
   getClasses() {
     this.classesService.getClasses().subscribe(classes => {
-      this.classes = classes,
-      error => console.log(error);
-    })
+      this.classes = classes;
+    });
   }
 
   mapFormToClass(): Classes {
@@ -90,15 +88,15 @@ export class AdminComponent implements OnInit {
       TeacherPhone: this.editForm.get('teacherPhone').value,
       Status: this.editForm.get('status').value,
       MaxGroupSize: this.editForm.get('groupSize').value
-    }
+    };
   }
 
   editClass(selectedClass: Classes) {
     this.display = true;
     this.selectedClass = selectedClass;
     this.editForm.setValue({
-      name:selectedClass.GroupName,
-      classType:selectedClass.OrganizationName,
+      name: selectedClass.GroupName,
+      classType: selectedClass.OrganizationName,
       grades: selectedClass.AgeGroup,
       teacherName: selectedClass.TeacherName,
       teacherEmail: selectedClass.TeacherEmail,
@@ -110,7 +108,7 @@ export class AdminComponent implements OnInit {
 
   editSubmission() {
     let updatedClass: Classes;
-    if(this.editForm.invalid) {
+    if (this.editForm.invalid) {
       this.messageService.add({
         severity: 'error',
         summary: 'Invalid Form',
@@ -141,8 +139,8 @@ export class AdminComponent implements OnInit {
             detail: `Something went wrong!`
           });
         }
-      );   
-    } 
+      );
+    }
   }
 
   deleteClass() {
@@ -163,10 +161,10 @@ export class AdminComponent implements OnInit {
           detail: `Something went wrong!`
         });
       }
-    )
+    );
   }
 
-  viewStudents(selectedClass : Classes) {
+  viewStudents(selectedClass: Classes) {
     this.router.navigate(['admin/students/', selectedClass.GroupId]);
   }
 }

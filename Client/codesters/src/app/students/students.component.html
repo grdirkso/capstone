@@ -1,6 +1,8 @@
 <p-breadcrumb [model]="items"></p-breadcrumb>
 <p-toast></p-toast>
-<div class="grid">
+<div *ngIf="students.length === 0" class="message">
+    <p-message severity="info" text="There are currently no students signed up for this class."></p-message>
+  </div><div class="grid">
     <div *ngFor="let student of students" class="col-6"> 
       <p-panel [header]="student.MemberName">
           <b>Name:</b> {{ student.MemberName}}

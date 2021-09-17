@@ -10,7 +10,7 @@ import { Members } from '../models/members.model';
 export class ClassesService {
 
   classUrl = 'http://127.0.0.1:8082/api/groups';
-  
+
   constructor(
     private http: HttpClient
   ) { }
@@ -20,7 +20,7 @@ export class ClassesService {
   }
 
   getClassById(classId: string): Observable<Classes> {
-    return this.http.get<Classes>(`${this.classUrl}/${classId}`)
+    return this.http.get<Classes>(`${this.classUrl}/${classId}`);
   }
 
   addMember(classId: string, member: Members): Observable<Members> {

@@ -1,13 +1,13 @@
-import { Members } from "./members.model";
+import { Members } from './members.model';
 
 export class Classes {
     GroupId?: number;
-    GroupName: string
+    GroupName: string;
     OrganizationName: string;
     TeacherName: string;
     TeacherPhone: string;
     TeacherEmail: string;
-    AgeGroup: string[]
+    AgeGroup: string[];
     MaxGroupSize: number;
     Status: string;
     Members?: Members[];

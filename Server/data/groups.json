@@ -7,7 +7,7 @@
     "TeacherPhone": "555-000-0000",
     "TeacherEmail": "nat214@gmail.com",
     "AgeGroup": ["1"],
-    "MaxGroupSize": 6,
+    "MaxGroupSize": 5,
     "Status": "active",
     "Members": [
       {
@@ -15,7 +15,7 @@
         "MemberEmail": "theaterkid0625@gmail.com",
         "MemberName": "Ezra Aiden",
         "MemberPhone": "555-000-0002",
-        "MemberGrade": "3"
+        "MemberGrade": "1"
       },
       {
         "MemberId": 4,
@@ -103,7 +103,7 @@
     "TeacherEmail": "smayer@gmail.com",
     "AgeGroup": ["3", "4", "5"],
     "MaxGroupSize": 5,
-    "Status": "active",
+    "Status": "inactive",
     "Members": [
       {
         "MemberId": 8,

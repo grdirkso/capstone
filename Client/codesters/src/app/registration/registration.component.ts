@@ -23,7 +23,7 @@ export class RegistrationComponent implements OnInit {
     selectedGrade;
     availableClasses = [];
     selectedClass = {label: 'No available classes', value: '0'};
-    display: boolean = false;
+    display = false;
     items: MenuItem[];
 
     regForm: FormGroup = this.fb.group({
@@ -33,24 +33,24 @@ export class RegistrationComponent implements OnInit {
       grade: ['', Validators.required],
       class: ['', Validators.required]
     });
-    
+
   constructor(
     private fb: FormBuilder,
     private classesService: ClassesService,
     private messageService: MessageService,
     private router: Router,
     private route: ActivatedRoute
-  ) { 
+  ) {
 
     this.grades = [
       {label: '1', value: '1'},
-      {label: '2', value:'2'},
-      {label: '3', value:'3'},
-      {label: '4', value:'4'},
+      {label: '2', value: '2'},
+      {label: '3', value: '3'},
+      {label: '4', value: '4'},
       {label: '5', value: '5'},
-      {label: '6', value:'6'},
-      {label: '7', value:'7'},
-      {label: '8', value:'8'}
+      {label: '6', value: '6'},
+      {label: '7', value: '7'},
+      {label: '8', value: '8'}
     ];
 
     this.availableClasses = [
@@ -62,12 +62,12 @@ export class RegistrationComponent implements OnInit {
     this.getClasses();
     this.items = [
       {label: 'Home', routerLink: '/home'},
-      {label:'Class Registration'}
-    ]
+      {label: 'Class Registration'}
+    ];
   }
 
   submit() {
-    if(this.regForm.valid) {
+    if (this.regForm.valid) {
       this.member = this.mapFormToMember();
       this.classesService.addMember(this.regForm.get('class').value, this.member).subscribe();
       this.display = true;
@@ -79,7 +79,7 @@ export class RegistrationComponent implements OnInit {
         detail: 'All fields must be filled out'
       });
     }
-    
+
   }
 
   mapFormToMember(): Members {
@@ -88,13 +88,12 @@ export class RegistrationComponent implements OnInit {
         MemberEmail: this.regForm.get('email').value,
         MemberPhone: this.regForm.get('phone').value,
         MemberGrade: this.regForm.get('grade').value
-    }
+    };
   }
 
   getClasses() {
     this.classesService.getClasses().subscribe(classes => {
-      this.classes = classes,
-      error => console.log(error);
+      this.classes = classes;
     });
   }
 
@@ -102,23 +101,22 @@ export class RegistrationComponent implements OnInit {
     this.availableClasses = [];
     this.classList = this.classes
                     .filter(c => c.AgeGroup.includes(this.regForm.get('grade').value))
-                    .filter(c => c.Status === "active")
+                    .filter(c => c.Status === 'active')
                     .filter(c => c.Members.length < c.MaxGroupSize);
-    this.availableClasses = this.classList.map(c =>({
+    this.availableClasses = this.classList.map(c => ({
       label: c.GroupName,
       value: c.GroupId
     }));
-    if(this.availableClasses.length === 0) {
+    if (this.availableClasses.length === 0) {
       this.availableClasses = [
         {label: 'No available classes', value: '0'}
       ];
-    } 
+    }
   }
 
   allMembers() {
     this.classesService.getClassById(this.regForm.get('class').value).subscribe(c => {
-     this.members = c.Members,
-      error => console.log(error);
+     this.members = c.Members;
     });
   }
 

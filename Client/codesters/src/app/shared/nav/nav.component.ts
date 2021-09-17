@@ -9,7 +9,7 @@ import { MenuItem } from 'primeng/api';
 export class NavComponent implements OnInit {
 
   items;
-  display: boolean = true;
+  display = true;
   constructor() { }
 
   ngOnInit(): void {
