@@ -17,7 +17,7 @@ PrimeNg
 
 ## Development server
 
-cd into client/codesters and run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+cd into client/codesters and run run `npm i` first and then `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Json Server
 
